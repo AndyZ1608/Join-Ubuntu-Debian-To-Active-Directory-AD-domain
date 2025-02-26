@@ -4,13 +4,14 @@
 DOMAIN="yourdomain.com"
 REALM="YOURDOMAIN.COM"
 DC_IP="your_ip"
+UBUNTU_IP="your_ubuntu_ip"
 HOSTNAME="your_hostname"
 
 # Đặt hostname
 sudo hostnamectl set-hostname $HOSTNAME
 
 echo "[INFO] Cấu hình /etc/hosts"
-echo "$DC_IP   $HOSTNAME.$DOMAIN   $HOSTNAME" | sudo tee -a /etc/hosts
+echo "$UBUNTU_IP   $HOSTNAME.$DOMAIN   $HOSTNAME" | sudo tee -a /etc/hosts
 
 # Cấu hình DNS
 echo "[INFO] Cấu hình /etc/resolv.conf"
@@ -31,7 +32,6 @@ cat <<EOF | sudo tee /etc/krb5.conf
     ticket_lifetime = 24h
     renew_lifetime = 7d
     forwardable = true
-    permitted_enctypes = aes256-cts-hmac-sha1-96 aes128-cts-hmac-sha1-96 rc4-hmac
 
 [realms]
     $REALM = {
