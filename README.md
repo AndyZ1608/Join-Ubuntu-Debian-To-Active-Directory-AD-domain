@@ -31,7 +31,7 @@ Question: How can I join Ubuntu 22.04|20.04|18.04 to Windows domain?, can I join
   ```
 - Máy Ubuntu có kết nối mạng với **Domain Controller (DC)**.
   ```bash
-  ping your_ip
+  for port in 88 389 636 464 53 135 445; do nc -zv 10.10.9.2 $port; done
   ```
 - **DNS trên Ubuntu** phải trỏ về **IP của DC**:
   ```bash
