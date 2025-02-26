@@ -68,7 +68,6 @@ Thêm nội dung sau:
     ticket_lifetime = 24h
     renew_lifetime = 7d
     forwardable = true
-    permitted_enctypes = aes256-cts-hmac-sha1-96 aes128-cts-hmac-sha1-96 rc4-hmac
 
 [realms]
     YOURDOMAIN.COM = {
