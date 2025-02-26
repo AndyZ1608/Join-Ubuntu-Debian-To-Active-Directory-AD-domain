@@ -135,7 +135,7 @@ session optional        pam_mkhomedir.so skel=/etc/skel umask=077
 ```
 ## **7. Đăng nhập bằng tài khoản AD trên Ubuntu**
 ```bash
-su - Administrator@yourdomain.com
+su - Administrator
 ```
 
 ---
