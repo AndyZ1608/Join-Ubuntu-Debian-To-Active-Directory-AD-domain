@@ -3,6 +3,8 @@ Question: How can I join Ubuntu 22.04|20.04|18.04 to Windows domain?, can I join
 
 # Join Ubuntu vào Active Directory (AD) trên Windows Server
 
+# Join Ubuntu vào Active Directory (AD) trên Windows Server
+
 ## **1. Điều kiện cần**
 - Máy Ubuntu có kết nối mạng với **Domain Controller (DC)**.
 - **DNS trên Ubuntu** phải trỏ về **IP của DC**:
@@ -21,7 +23,7 @@ Question: How can I join Ubuntu 22.04|20.04|18.04 to Windows domain?, can I join
 ## **2. Cài đặt các gói cần thiết**
 ```bash
 sudo apt update
-sudo apt install realmd sssd sssd-tools samba-common-bin oddjob oddjob-mkhomedir adcli -y
+sudo apt install realmd sssd sssd-tools samba-common-bin oddjob oddjob-mkhomedir adcli krb5-user libpam-krb5 -y
 ```
 
 ---
@@ -78,9 +80,19 @@ realm list
 
 ---
 
+## **6. Xác thực Kerberos**
+1. **Lấy vé Kerberos:**
+   ```bash
+   kinit Administrator@YOURDOMAIN.COM
+   ```
+2. **Kiểm tra vé:**
+   ```bash
+   klist
+   ```
+
 ---
 
-## **66. Cấu hình đăng nhập người dùng AD trên Ubuntu**
+## **7. Cấu hình đăng nhập người dùng AD trên Ubuntu**
 1. **Chỉnh sửa cấu hình SSSD:**
    ```bash
    sudo nano /etc/sssd/sssd.conf
@@ -105,13 +117,17 @@ realm list
 
 ---
 
-## **7. Đăng nhập bằng tài khoản AD trên Ubuntu**
+## **8. Đăng nhập bằng tài khoản AD trên Ubuntu**
 ```bash
 su - Administrator@yourdomain.com
 ```
 
 ---
 
+## **📌 Kết luận**
+✔ **Join Ubuntu vào AD** bằng `realm join`.
+✔ **Xác thực với Kerberos** bằng `kinit`.
+✔ **Cấu hình SSSD để cho phép đăng nhập**.
 
 🚀 **Sau các bước trên, máy Ubuntu đã là thành viên của AD và có thể đăng nhập bằng tài khoản AD!**
 
