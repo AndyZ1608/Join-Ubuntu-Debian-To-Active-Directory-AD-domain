@@ -137,10 +137,5 @@ su - Administrator@yourdomain.com
 
 ---
 
-## **📌 Kết luận**
-✔ **Join Ubuntu vào AD** bằng `realm join`.
-✔ **Xác thực với Kerberos** bằng `kinit`.
-✔ **Cấu hình SSSD để cho phép đăng nhập**.
-
 🚀 **Sau các bước trên, máy Ubuntu đã là thành viên của AD và có thể đăng nhập bằng tài khoản AD!**
 
