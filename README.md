@@ -105,19 +105,7 @@ realm list
 
 ---
 
-## **6. Xác thực Kerberos**
-1. **Lấy vé Kerberos:**
-   ```bash
-   kinit Administrator@YOURDOMAIN.COM
-   ```
-2. **Kiểm tra vé:**
-   ```bash
-   klist
-   ```
-
----
-
-## **7. Cấu hình đăng nhập người dùng AD trên Ubuntu**
+## **6. Cấu hình đăng nhập người dùng AD trên Ubuntu**
 1. **Chỉnh sửa cấu hình SSSD:**
    ```bash
    sudo nano /etc/sssd/sssd.conf
@@ -142,7 +130,7 @@ realm list
 
 ---
 
-## **8. Đăng nhập bằng tài khoản AD trên Ubuntu**
+## **7. Đăng nhập bằng tài khoản AD trên Ubuntu**
 ```bash
 su - Administrator@yourdomain.com
 ```
