@@ -3,9 +3,32 @@ Question: How can I join Ubuntu 22.04|20.04|18.04 to Windows domain?, can I join
 
 # Join Ubuntu vào Active Directory (AD) trên Windows Server
 
-# Join Ubuntu vào Active Directory (AD) trên Windows Server
-
 ## **1. Điều kiện cần**
+- **Cấu hình hostname** trên Ubuntu:
+  ```bash
+  sudo hostnamectl set-hostname your_hostname@yourdomain.com
+  ```
+- **Cấu hình file `/etc/hosts`**:
+  ```bash
+  sudo nano /etc/hosts
+  ```
+  Thêm dòng:
+  ```ini
+  your_ip     your_hostname
+  ```
+- **Cấu hình NTP để đồng bộ thời gian với AD Server**:
+  ```bash
+  sudo timedatectl set-ntp true
+  ```
+- **DNS trên Ubuntu phải trỏ về IP của DC**:
+  ```bash
+  sudo nano /etc/resolv.conf
+  ```
+  Thêm dòng:
+  ```ini
+  nameserver your_ip
+  search yourdomain.com
+  ```
 - Máy Ubuntu có kết nối mạng với **Domain Controller (DC)**.
 - **DNS trên Ubuntu** phải trỏ về **IP của DC**:
   ```bash
