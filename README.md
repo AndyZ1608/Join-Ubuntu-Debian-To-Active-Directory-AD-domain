@@ -110,16 +110,10 @@ realm list
    ```bash
    sudo nano /etc/sssd/sssd.conf
    ```
-   Thêm nội dung sau:
+   Chỉnh sửa nội dung sau:
    ```ini
-   [sssd]
-   services = nss, pam, ssh
-   config_file_version = 2
-   domains = yourdomain.com
-
-   [domain/yourdomain.com]
-   id_provider = ad
-   access_provider = ad
+   fallback_homedir = /home/%u
+   use_fully_qualified_names = False
    ```
    Lưu file (`CTRL + X`, `Y`, `Enter`).
 
@@ -129,7 +123,16 @@ realm list
    ```
 
 ---
+3. **Chỉnh sửa PAM:**
+```
+sudo nano/etc/pam.d/common-session
 
+```
+Thêm dòng dưới đây:
+```
+session optional        pam_mkhomedir.so skel=/etc/skel umask=077
+
+```
 ## **7. Đăng nhập bằng tài khoản AD trên Ubuntu**
 ```bash
 su - Administrator@yourdomain.com
