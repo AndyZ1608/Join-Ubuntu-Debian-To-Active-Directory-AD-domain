@@ -30,6 +30,9 @@ Question: How can I join Ubuntu 22.04|20.04|18.04 to Windows domain?, can I join
   search yourdomain.com
   ```
 - Máy Ubuntu có kết nối mạng với **Domain Controller (DC)**.
+  ```bash
+  ping your_ip
+  ```
 - **DNS trên Ubuntu** phải trỏ về **IP của DC**:
   ```bash
   nslookup yourdomain.com
