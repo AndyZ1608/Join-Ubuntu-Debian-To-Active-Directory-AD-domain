@@ -125,7 +125,7 @@ realm list
 ---
 3. **Chỉnh sửa PAM:**
 ```
-sudo nano/etc/pam.d/common-session
+sudo nano /etc/pam.d/common-session
 
 ```
 Thêm dòng dưới đây:
