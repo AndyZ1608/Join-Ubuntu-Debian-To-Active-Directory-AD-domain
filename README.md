@@ -114,6 +114,7 @@ realm list
    ```ini
    fallback_homedir = /home/%u
    use_fully_qualified_names = False
+   access_provider = permit
    ```
    Lưu file (`CTRL + X`, `Y`, `Enter`).
 
