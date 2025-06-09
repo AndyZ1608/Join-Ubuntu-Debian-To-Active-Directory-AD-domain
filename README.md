@@ -77,8 +77,8 @@ Thêm nội dung sau:
     }
 
 [domain_realm]
-    .yourdomain.com = YOURDOMAIN.COM
-    yourdomain.com = YOURDOMAIN.COM
+    .yourdomain.com = YOURDOMAIN.COM ##Viet in hoa
+    yourdomain.com = YOURDOMAIN.COM ##Viet in hoa
 ```
 Lưu file (`CTRL + X`, `Y`, `Enter`).
 
