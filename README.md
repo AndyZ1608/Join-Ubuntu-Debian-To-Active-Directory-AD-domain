@@ -62,7 +62,7 @@ sudo nano /etc/krb5.conf
 Thêm nội dung sau:
 ```ini
 [libdefaults]
-    default_realm = YOURDOMAIN.COM
+    default_realm = YOURDOMAIN.COM ##Viet in hoa
     dns_lookup_realm = false
     dns_lookup_kdc = true
     ticket_lifetime = 24h
@@ -71,7 +71,7 @@ Thêm nội dung sau:
 
 [realms]
     YOURDOMAIN.COM = {
-        kdc = your_ip
+        kdc = your_domain_ip
         admin_server = your_ip
         default_domain = yourdomain.com
     }
